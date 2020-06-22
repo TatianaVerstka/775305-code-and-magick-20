@@ -112,7 +112,6 @@ function onPopupEscPress(evt) {
 
 function openPopup() {
     setup.classList.remove('hidden');
-    renderWizards();
     setup.querySelector('.setup-similar').classList.remove('hidden');
     document.addEventListener('keydown', onPopupEscPress);
 }
@@ -171,3 +170,5 @@ setupClose.addEventListener('keydown', function(evt) {
         closePopup();
     }
 })
+
+renderWizards();
