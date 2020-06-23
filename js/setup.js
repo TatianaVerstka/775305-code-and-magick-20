@@ -56,6 +56,7 @@ function generateWizard() {
     wizard.name = setWizardName();
     wizard.coatColor = getRandomValue(WIZARD_COAT_COLORS);
     wizard.eyesColor = getRandomValue(WIZARD_EYES_COLORS);
+
   }
   return wizard;
 }
