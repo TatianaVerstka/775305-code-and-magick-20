@@ -5,6 +5,7 @@
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = setup.querySelector('.setup-close');
   var upload = setup.querySelector('.upload');
+  var formUserName = document.querySelector('.setup-user-name');
 
   function onPopupEscPress(evt) {
     if (formUserName != document.activeElement && evt.key === 'Escape') {
