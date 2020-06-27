@@ -15,12 +15,12 @@ var TEXT_BLACK_STYLE = '#000';
 var BAR_CHART_MAX_HEIGHT = 150;
 var barHeight = BAR_CHART_MAX_HEIGHT - GAP - TEXT_HEIGHT - GAP;
 
-var renderCloud = function (ctx, x, y, color) {
+function renderCloud(ctx, x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
-};
+}
 
-var getMaxElement = function (arr) {
+function getMaxElement(arr) {
   var maxElement = arr[0];
 
   for (var i = 1; i < arr.length; i++) {
@@ -30,7 +30,7 @@ var getMaxElement = function (arr) {
   }
 
   return maxElement;
-};
+}
 
 window.renderStatistics = function (ctx, players, times) {
   renderCloud(ctx, CLOUD_X + GAP, CLOUD_Y + GAP, 'rgba(0, 0, 0, 0.7)');
