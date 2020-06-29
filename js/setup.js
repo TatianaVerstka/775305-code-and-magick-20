@@ -1,46 +1,14 @@
 'use strict';
 
-var COLORS_COAT = [
-  'rgb(101, 137, 164)',
-  'rgb(241, 43, 107)',
-  'rgb(146, 100, 161)',
-  'rgb(56, 159, 117)',
-  'rgb(215, 210, 55)',
-  'rgb(0, 0, 0)'
-];
-
-var COLORS_EYES = [
-  'black',
-  'red',
-  'blue',
-  'yellow',
-  'green'
-];
-
-var COLORS_FIREBALL = [
-  '#ee4830',
-  '#30a8ee',
-  '#5ce6c0',
-  '#e848d5',
-  '#e6e848'
-];
-
-var WIZARD_NAMES = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
-var WIZARD_SECOND_NAMES = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
-var WIZARD_COAT_COLORS = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
-var WIZARD_EYES_COLORS = ['black', 'red', 'blue', 'yellow', 'green'];
-var WIZARDS_COUNT = 4;
-
-var setup = document.querySelector('.setup');
-var setupOpen = document.querySelector('.setup-open');
-var setupClose = setup.querySelector('.setup-close');
-var formUserName = document.querySelector('.setup-user-name');
 var colorCoat = document.querySelector('.wizard-coat');
 var colorEyes = document.querySelector('.wizard-eyes');
 var colorFireball = document.querySelector('.setup-fireball-wrap');
-var valueCoat = document.querySelector('input[name="coat-color"]');
-var valueEyes = document.querySelector('input[name="eyes-color"]');
 var valueFireball = document.querySelector('input[name="fireball-color"]');
+
+window.colorize(colorCoat);
+window.colorize(colorEyes);
+window.colorize(colorFireball, valueFireball);
+window.renderWizards();
 
 function setWizardName() {
   return getRandomValue(WIZARD_NAMES) + ' ' + getRandomValue(WIZARD_SECOND_NAMES);
