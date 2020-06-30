@@ -25,7 +25,7 @@
     similarListElement.appendChild(fragment);
 
     userDialog.querySelector('.setup-similar').classList.remove('hidden');
-  };
+  }
 
   function onError(errorMessage) {
     var node = document.createElement('div');
@@ -37,7 +37,7 @@
 
     node.textContent = errorMessage;
     document.body.insertAdjacentElement('afterbegin', node);
-  };
+  }
 
   window.load(onSuccess, onError);
 
@@ -48,6 +48,6 @@
       userDialog.classList.add('hidden');
     }, onError);
     evt.preventDefault();
-  };
+  }
   form.addEventListener('submit', submitHandler);
 })()
