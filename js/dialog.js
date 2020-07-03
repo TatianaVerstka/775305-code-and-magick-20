@@ -76,7 +76,7 @@
 
       function onClickPreventDefault(clickEvt) {
         clickEvt.preventDefault();
-        upload.removeEventListener('click', onClickPreventDefault)
+        upload.removeEventListener('click', onClickPreventDefault);
       }
 
       if (dragged) {
