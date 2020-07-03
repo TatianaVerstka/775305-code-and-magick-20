@@ -50,4 +50,4 @@
     evt.preventDefault();
   }
   form.addEventListener('submit', submitHandler);
-})()
+})();

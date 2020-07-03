@@ -8,7 +8,7 @@
   var formUserName = document.querySelector('.setup-user-name');
 
   function onPopupEscPress(evt) {
-    if (formUserName != document.activeElement && evt.key === 'Escape') {
+    if (formUserName !== document.activeElement && evt.key === 'Escape') {
       evt.preventDefault();
       closePopup();
     }
@@ -74,11 +74,12 @@
       document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseup', onMouseUp);
 
+      function onClickPreventDefault(clickEvt) {
+        clickEvt.preventDefault();
+        upload.removeEventListener('click', onClickPreventDefault)
+      }
+
       if (dragged) {
-        function onClickPreventDefault(clickEvt) {
-          clickEvt.preventDefault();
-          upload.removeEventListener('click', onClickPreventDefault)
-        };
         upload.addEventListener('click', onClickPreventDefault);
       }
     }
