@@ -4,7 +4,7 @@
 
   var userDialog = document.querySelector('.setup');
   var coatColor = 'rgb(101, 137, 164)';
-  var eyesColor= 'black';
+  var eyesColor = 'black';
   var wizards = [];
 
   function getRank(wizard) {

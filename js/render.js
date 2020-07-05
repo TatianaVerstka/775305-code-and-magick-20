@@ -25,5 +25,5 @@
     }
 
     similarElement.classList.remove('hidden');
-  }
+  };
 })();
