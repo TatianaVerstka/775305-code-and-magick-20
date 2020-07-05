@@ -26,6 +26,11 @@
     '#e6e848'
   ];
 
+  var wizard = {
+    onEyesChange: function (color) { },
+    onCoatChange: function (color) { }
+  }
+
   function getRandomColors(data) {
     return data[Math.floor(Math.random() * data.length)];
   }
@@ -40,21 +45,33 @@
     return '#' + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
   }
 
+  var wizardElement = document.querySelector('.setup-wizard');
+
+  var wizardCoatElement = wizardElement.querySelector('.wizard-coat');
+  wizardCoatElement.addEventListener('click', function () {
+    var newColor = getRandomColors(COLORS_COAT);
+    this.style.fill = newColor;
+    wizard.onCoatChange(newColor);
+  });
+
+  var wizardEyesElement = wizardElement.querySelector('.wizard-eyes');
+  wizardEyesElement.addEventListener('click', function () {
+    var newColor = getRandomColors(COLORS_EYES);
+    this.style.fill = newColor;
+    wizard.onEyesChange(newColor);
+  });
+
   window.colorize = function (element, date) {
     element.addEventListener('click', function () {
-      var colorCoat = getRandomColors(COLORS_COAT);
-      var colorEyes = getRandomColors(COLORS_EYES);
       var colorFireball = getRandomColors(COLORS_FIREBALL);
 
       if (element.tagName.toLowerCase() === 'div') {
         element.style.backgroundColor = colorFireball;
         var randomElement = element.style.backgroundColor;
         date.value = rgb2hex(randomElement);
-      } else if (document.querySelector('.wizard-coat')) {
-        element.style.fill = colorCoat;
-      } else {
-        element.style.fill = colorEyes;
       }
     });
   };
+
+  return window.wizard = wizard;
 })();
